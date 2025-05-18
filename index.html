@@ -5,11 +5,25 @@
     <meta name="viewport"
     content="width=device-width",
     initial-sale="1.0">
-        <title>Mymusic Tv</title>
+    <title>Mymusic Tv</title>
 
+<style> 
+
+     @keyframes saltar {
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-20px);} 
+    100%{transform: translateY(0);}
+}
+
+    .animado {
+    color:cyan;
+    text-align:center;
+    animation: saltar 1s infinite;
+}
+</style>
 </head>
-<body>
-    <center><h1 style="color: Bronze;">Bienvenidos a Mymusic Tv</h1></center>
+<body>             
+    <h1 class="animado">Bienvenidosa Mymusic</h1>
     <a href="artistas.html">Ver artistas</a>
 </body>
 </HTML>
