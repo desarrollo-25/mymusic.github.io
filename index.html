@@ -29,17 +29,21 @@
       border-radius: 20px;
     }
 
-@keyframes saltar {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px) rotate(360deg); }
-      100% { transform: translateY(0); }
+    .titulo span {
+      display: inline-block;
+      color: cyan;
+      font-size: 2.5em;
+      animation: saltar 1.5s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.1s);
     }
 
-    .animado {
-      color: cyan;
-      animation: saltar 1.5s infinite;
-      font-size: 2.5em;
-      margin-bottom: 20px;
+    @keyframes saltar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
     }
 
     a {
@@ -55,11 +59,19 @@
 </head>
 <body>
 
- <div class="marco">
-    <h1 class="animado">Bienvenidos a Mymusic</h1>
+  <div class="marco">
+    <h1 class="titulo">
+      <span style="--i:0">M</span>
+      <span style="--i:1">y</span>
+      <span style="--i:2">m</span>
+      <span style="--i:3">u</span>
+      <span style="--i:4">s</span>
+      <span style="--i:5">i</span>
+      <span style="--i:6">c</span>
+    </h1>
     <p>¡Disfruta explorando nuestros artistas!</p>
     <a href="artistas.html">Ver artistas</a>
   </div>
 
 </body>
-</html>   
+</html>
