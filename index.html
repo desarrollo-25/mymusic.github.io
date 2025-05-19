@@ -1,29 +1,65 @@
 <!DOCTYPE html>
-<HTML lang="español">
+<html lang="es">
 <head>
-    <meta charset="UFT-8">
-    <meta name="viewport"
-    content="width=device-width",
-    initial-sale="1.0">
-    <title>Mymusic Tv</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mymusic Tv</title>
 
-<style> 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      color: white;
+    }
 
-     @keyframes saltar {
-    0%{transform: translateY(0);}
-    50%{transform: translateY(-20px);} 
-    100%{transform: translateY(0);}
-}
+    .marco {
+      border: 8px solid transparent;
+      padding: 40px;
+      border-image: linear-gradient(45deg, cyan, magenta, blue) 1;
+      box-shadow: 0 0 25px cyan;
+      max-width: 800px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 20px;
+    }
+
+@keyframes saltar {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px) rotate(360deg); }
+      100% { transform: translateY(0); }
+    }
 
     .animado {
-    color:Bronze;
-    text-align:center;
-    animation: saltar 1.5s infinite;
-}
-</style>
+      color: cyan;
+      animation: saltar 1.5s infinite;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: magenta;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    a:hover {
+      color: cyan;
+    }
+  </style>
 </head>
-<body>             
+<body>
+
+ <div class="marco">
     <h1 class="animado">Bienvenidos a Mymusic</h1>
+    <p>¡Disfruta explorando nuestros artistas!</p>
     <a href="artistas.html">Ver artistas</a>
+  </div>
+
 </body>
-</HTML>
+</html>   
