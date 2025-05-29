@@ -2,11 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Artistas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mymusic Tv</title>
   <style>
+    body {
+      color: white;
+      background-image: url(https://th.bing.com/th/id/R.2557bf415b23d855c6691f8443a8198f?rik=Z6tux%2bw4YtQOkA&pid=ImgRaw&r=0);
+      background-position: right;
+      background-repeat: no-repeat;
+      background-color: black;
+      background-attachment: fixed;
+      font-family: sans-serif;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .buscador-centro {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    #buscador {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+    }
+
     .titulo-artistas {
       font-size: 2.8em;
-      color: white;
       text-align: center;
       background: linear-gradient(to right, #00ffff, #ff00ff, #00ffff);
       -webkit-background-clip: text;
@@ -17,35 +51,42 @@
     }
 
     @keyframes moverFondo {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 100% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
-    body {
-      background-color: #242424;
+    .card {
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px;
+      text-align: center;
+      max-width: 320px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    h2, h3, p {
+      color: white;
     }
   </style>
+  <script>
+    function filtrarTarjetas() {
+      const input = document.getElementById('buscador').value.toLowerCase();
+      const tarjetasMusica = document.querySelectorAll('.destacados .card');
+
+      tarjetasMusica.forEach(card => {
+        const texto = card.innerText.toLowerCase();
+        if (texto.includes(input)) {
+          card.style.display = 'inline-block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </head>
 <body>
-  <h1 class="titulo-artistas">Nuestros Artistas</h1>
-  <a href="index.html">Inicio</a>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mymusic Tv</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
   <header>
     <h1>Mymusic Tv 🎵</h1>
     <nav>
@@ -55,33 +96,35 @@
     </nav>
   </header>
 
-  <main>
+  <h1 class="titulo-artistas">Nuestros Artistas</h1>
+
+  <div class="buscador-centro">
+    <input type="text" id="buscador" placeholder="Buscar canción..." onkeyup="filtrarTarjetas()">
+  </div>
+
+    <main>
     <section class="destacados">
       <h2>Música Destacada</h2>
       <div class="card">
         <h3>Busca por dentro</h3>
         <p>Artista: Grupo Niche</p> 
-        <button>Reproducir</button>
         <img src="https://cdn.teleticket.com.pe/especiales/grupo-niche-lima-2024/images/disco-imagen.jpg" alt="GrupoNiche" width="300" height="200">
+        <button>Reproducir</button>
       </div>
       <div class="card">
         <h3>Tu con el</h3>
         <p>Artista: Frankie Ruiz</p>
-        <button>Reproducir</button>
         <img src="https://www.salsomayor.com/wp-content/uploads/2024/08/1900x1900-000000-80-0-0-20-1024x1024.jpg" alt="El papa de la salsa" width="300" height="200">            
+        <button>Reproducir</button>
       </div>
       <div class="card">
         <h3>De Profesion tu amante</h3>
         <p>Artista: Eddie Santiago</p>
-        <button>Reproducir</button>
         <img src="https://cdn-images.dzcdn.net/images/cover/70ae3005ecb8706e3feb5476ea404889/0x1900-000000-80-0-0.jpg" alt="Salsa Romantica" width="300" height="200">
+        <button>Reproducir</button>
       </div>
     </section>
   </main>
-
-  <footer>
-    &copy; 2025 Mymusic Tv. Todos los derechos reservados.
-  </footer>
 
 </body>
 </html>
@@ -95,15 +138,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <h1>Mymusic Tv 🎵</h1>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Explorar</a>
-      <a href="artistas.html">Artistas</a>
-    </nav>
-  </header>
 
   <main>
     <section class="destacados">
@@ -111,21 +145,21 @@
       <div class="card">
         <h3>Por tu maldito Amor</h3>
         <p>Artista: Vicente Fernandez</p>
-        <button>Reproducir</button>
         <img src="https://cdn-p.smehost.net/sites/e20a57bbfd89420f9c28766e9d3c57c2/wp-content/uploads/2015/08/Vicente-Fern%E2%80%A0ndez-Para-siempre.jpg" alt="Charo Mexicano" width="300" height="200">
+        <button>Reproducir</button>
       </div>
       <div class="card">
         <h3>Amar y Querer</h3>
         <p>Artista: Jose Jose</p>
-        <button>Reproducir</button>
         <img src="https://cdn-images.dzcdn.net/images/cover/29ce0d1b9aafaf5e4664fe2ff7b18abe/0x1900-000000-80-0-0.jpg" alt="Baladas Romanticas" width="300" height="200">
+        <button>Reproducir</button>
       </div>
       <div class="card">
         <h3>El o yo</h3>
         <p>Artista: temerarios</p>
-        <button>Reproducir</button>
         <img src="https://cdn-images.dzcdn.net/images/artist/098ea0886f463cf48b75d2af855ad3b9/1900x1900-000000-80-0-0.jpg" alt="Duo Romantico" width="300" height="200">
-      </div>
+        <button>Reproducir</button>
+        </div>
     </section>
 
     <!-- Nueva sección de Artistas -->
@@ -135,23 +169,27 @@
         <h3>Canserbero</h3>
         <p>Rap Conciencia.</p>
         <img src="https://m.media-amazon.com/images/I/419XXuXZmdL._UXNaN_FMjpg_QL85_.jpg" alt="Rapero Venezolano" width="300" height="200">
+        <button>Reproducir</button>
       </div>
       <div class="card">
         <h3>Ricardo Arjona</h3>
         <p>Solo para enamorados 2.</p>
         <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/63/af/63aff4bc1a94ec42b15f6bd4d6390391.jpg" alt="Cantautor Guatemalteco" width="300" height="200">
+        <button>Reproducir</button>
       </div>
       <div class="card">
         <h3>Los Rancheros</h3>
         <p>Rock en Español.</p>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVqojof-OmrxyyfZMXLQgZMqc9j4mODyQxHQ&s" alt="Descripción de la imagen" width="300" height="200">
+        <button>Reproducir</button>
       </div>
     </section>
   </main>
 
+
   <footer>
     &copy; 2025 Mymusic Tv. Todos los derechos reservados.
   </footer>
-
 </body>
 </html>
+
