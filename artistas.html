@@ -106,15 +106,13 @@
   <section class="destacados">
     <h2>Música Destacada</h2>
 
-    <div class="card">
-      <h3>Busca por dentro</h3>
-      <p>Artista: Grupo Niche</p>
-      <img src="https://cdn.teleticket.com.pe/especiales/grupo-niche.jpg" alt="Grupo Niche">
-      <audio controls>
-        <source src="https://drive.google.com/uc?export=download&id=17uG8kMBpcDUQAnhSgRsslWibuvycoivk" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-      </audio>
-    </div>   
+<div class="card">
+    <h3>Busca por dentro</h3>
+    <p>Artista: Grupo Niche</p>
+    <img src="https://cdn.teleticket.com.pe/especiales/grupo-niche.jpg" alt="Grupo Niche">
+    <audio id="niche" src="https://drive.google.com/uc?export=download&id=17uG8kMBpcDUQAnhSgRsslWibuvycoivk"></audio>
+    <button onclick="document.getElementById('niche').play()">Reproducir</button>
+  </div>   
       <div class="card">
         <h3>Tu con el</h3>
         <p>Artista: Frankie Ruiz</p>
