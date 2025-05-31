@@ -65,7 +65,7 @@
   <script>
     function filtrarTarjetas() {
       const input = document.getElementById('buscador').value.toLowerCase();
-      const tarjetasMusica = document.querySelectorAll('.destacados .card');
+      const tarjetasMusica = document.querySelectorAll('.destacados .card, .artistas .card');
 
       tarjetasMusica.forEach(card => {
         const texto = card.innerText.toLowerCase();
